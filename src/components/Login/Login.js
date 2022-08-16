@@ -5,8 +5,8 @@ import app from "../../firebase.init";
 const auth = getAuth(app);
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
 
   const handleFormSubmit = (event) => {
     const auth = getAuth();
@@ -17,7 +17,7 @@ const Login = () => {
         console.log(user);
       })
       .catch((error) => {
-        console.error(error);
+        console.log(error);
       });
     event.preventDefault();
   };
